@@ -14,6 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
+      run: zip -r release.zip .
+    - name: Release to Github
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
@@ -25,4 +27,4 @@ jobs:
       run: dotnet test --no-build --verbosity normal
     - name: Publish
       run: dotnet publish GitHubAction.sln
-      
+    
