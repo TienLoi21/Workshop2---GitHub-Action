@@ -27,4 +27,8 @@ jobs:
       run: dotnet test --no-build --verbosity normal
     - name: Publish
       run: dotnet publish GitHubAction.sln
+    - uses: actions/upload-artifact@v3
+      with:
+        name: my-Zip
+        path: GitHubAction.sln
     
